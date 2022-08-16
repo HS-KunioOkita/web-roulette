@@ -1,0 +1,8 @@
+runtime: nodejs16 # or another supported version
+env: standard
+service: web-roulette
+instance_class: F1
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 1

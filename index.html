@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>抽選アプリ</title>
+        <style>
+            @font-face {
+                font-family: "mamelon";
+                src: url("./font/mameh_woff/Mamelon-5-Hi-Regular.woff2") format("woff2");
+                font-display: swap;
+            }
+            @import url(//fonts.googleapis.com/earlyaccess/nicomoji.css);
+        </style>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <body>
+        <div id="odai-cards" class="container text-center">
+            <h1 class="m-3" style="font-family: 'mamelon', sans-serif;">お題一覧</h1>
+            <button v-on:click="selectOdai" class="btn btn-primary m-3" style="font-family: 'mamelon', sans-serif;">お題抽選開始！</button>
+            <button v-on:click="stopSelectOdai" class="btn btn-primary" style="font-family: 'mamelon', sans-serif;">お題抽選終了！</button>
+            <div class="row">
+                <div v-for="item in items" class="col-4 mt-3">
+                    <div class="card h-100" v-bind:class="{'bg-info': item.selected === true, 'bg-light': item.selected === false}">
+                        <div class="card-body" style="font-family: 'mamelon', sans-self;">
+                            {{ item.message }}
+                        </div>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </body>
+    <script src="./js/main.js"></script>
+</html>
